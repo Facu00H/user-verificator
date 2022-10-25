@@ -1,5 +1,5 @@
 export const logInfo = (message:string) => {
-  console.log(`Error: ${message}`)
+  console.log(`Info: ${message}`)
 }
 
 export const logSucces = (message:string) => {
@@ -7,7 +7,7 @@ export const logSucces = (message:string) => {
 }
 
 export const logWarning = (message:string) => {
-  console.log(`Error: ${message}`)
+  console.log(`Warning: ${message}`)
 }
 
 export const logError = (message:string) => {
