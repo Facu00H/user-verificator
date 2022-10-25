@@ -10,12 +10,25 @@ const port: number | string = process.env.PORT || 4000
 
 // define the first route
 app.get('/', (req: Request, res: Response) => {
-  res.send('Welcomee')
+  res.status(200).json({
+    "data": {'message': 'Goodbye, world'}
+  })
 })
 
+
 app.get('/hello', (req: Request, res: Response) => {
-  res.send('hello my broder')
+  if(req.query.name){
+    res.status(200).json({
+      "data": {'message': `Hola ${req.query.name}`}
+    })
+  }else{
+    res.status(200).json({
+      "data": {'message': `Hola anonimo`}
+    })
+  }
 })
+
+
 
 // Execute APP listen request to port
 app.listen(port, () => console.log(`EXPRESS SERVER runing http://localhost:${port}`))
