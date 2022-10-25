@@ -8,14 +8,6 @@ dotenv.config()
 const app: Express = express()
 const port: number | string = process.env.PORT || 4000
 
-// define the first route
-app.get('/', (req: Request, res: Response) => {
-  res.status(200).json({
-    "data": {'message': 'Goodbye, world'}
-  })
-})
-
-
 app.get('/hello', (req: Request, res: Response) => {
   if(req.query.name){
     res.status(200).json({
