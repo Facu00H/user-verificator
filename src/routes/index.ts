@@ -6,6 +6,7 @@
 import express, { Request, Response } from 'express'
 import helloRouter from './HelloRouter'
 import { logInfo } from '.././utils/logger'
+import ByeRouter from './GoodByeRoutes'
 
 // Server instance
 const server = express()
@@ -24,5 +25,6 @@ rootRouter.get('/', (req: Request, res: Response) => {
 // Redirections to Routers & controllers.
 server.use('/', rootRouter) // http://localhost:4000/api/
 server.use('/hello', helloRouter) // http://localhost:4000/api/hello
+server.use('/bye', ByeRouter) // http://localhost:4000/api/bye
 
 export default server
