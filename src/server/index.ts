@@ -1,4 +1,4 @@
-import express, { Express, Request, Response} from 'express'
+import express, { Express, Request, Response } from 'express'
 
 // environment variables
 import dotenv from 'dotenv'
@@ -9,7 +9,7 @@ import helmet from 'helmet'
 
 // TODO HTTPS
 
-//Routes router
+// Routes router
 import routes from '../routes'
 
 // Configurar dotenv

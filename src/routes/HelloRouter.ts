@@ -1,15 +1,15 @@
-import express,{ Request, Response } from "express"
+import express, { Request, Response } from 'express'
 import { HelloController } from '../controller/HelloControler'
-import { logInfo } from ".././utils/logger"
+import { logInfo } from '.././utils/logger'
 
 // Router from express
-let helloRouter = express.Router()
+const helloRouter = express.Router()
 
 // http://localhost:4000/api/hello?name=Martin/
 helloRouter.route('/')
-  .get(async(req:Request, res:Response) => {
+  .get(async (req:Request, res:Response) => {
     // Obtener Query Param
-    let name: any = req?.query?.name
+    const name: any = req?.query?.name
 
     logInfo(`Query Param: ${name}`)
     // Controller instance execute method
@@ -17,7 +17,7 @@ helloRouter.route('/')
     // Obtain response.
     const response = await controller.getMessage(name)
     // Send to the client the response
-    return res.send(response);
+    return res.send(response)
   })
 
 export default helloRouter
