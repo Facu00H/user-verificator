@@ -21,6 +21,9 @@ const app: Express = express()
 // Define APP to use "/api" and use rootrouter from 'index.ts' in router
 app.use('/api', routes)
 
+// Static app.
+app.use(express.static('public'))
+
 // TODO mongoose Connection
 
 // Security config
